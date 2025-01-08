@@ -38,7 +38,7 @@ task_list.innerHTML+= `<li class="task-container">
         parsedTasks.push(task_input.value.trim())
         localStorage.setItem("storage", JSON.stringify( parsedTasks))
         task_form.reset()
-        
+        console.log( parsedTasks)
         
     }
 }
@@ -111,7 +111,7 @@ else if(e.target.classList.contains('done-button')){
 
 })
 
-
+console.log(searchbar.value)
 
 closeButton.addEventListener('click', (e)=>{
     e.stopPropagation();
@@ -143,9 +143,11 @@ filtered.forEach((task)=>{
 )
 let  updatedTasks = []
 filtered.forEach((task)=>{
+console.log(task.firstElementChild.innerText)
    updatedTasks.push(task.firstElementChild.textContent)
+     console.log(updatedTasks)
      parsedTasks = updatedTasks
-     
+     console.log(parsedTasks)
  }
 )
 localStorage.setItem("storage", JSON.stringify(parsedTasks))
@@ -156,18 +158,24 @@ window.addEventListener('load', (e)=>{
     e.stopPropagation()
    
    let loadedPage = JSON.parse( localStorage.getItem("savedPage"))
-   
-    task_list.innerHTML+= loadedPage
+   if(loadedPage === !null || !undefined){
+    task_list.innerHTML = loadedPage}
 
 
    })
 
    window.addEventListener('unload', ()=>{
+    if(task_list.innerHTML.length){
     let savedPage = task_list.innerHTML
-    localStorage.setItem("savedPage", JSON.stringify(savedPage))
+    localStorage.setItem("savedPage", JSON.stringify(savedPage))}
     
     
     
     })
 
+body.addEventListener('click',(e)=>{
+    e.stopPropagation()
+    console.log( parsedTasks)
+   
+})
 
