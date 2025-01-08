@@ -165,7 +165,7 @@ window.addEventListener('load', (e)=>{
    })
 
    window.addEventListener('unload', ()=>{
-    if(task_list.innerHTML.length && !null || undefined){
+    if(task_list.innerHTML != null || undefined){
     let savedPage = task_list.innerHTML
     localStorage.setItem("savedPage", JSON.stringify(savedPage))}
     
