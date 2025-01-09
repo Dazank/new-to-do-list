@@ -60,9 +60,11 @@ body{
 
 }
 
-.task-input{
+#task-input{
     margin-left:auto;
     margin-right: auto;
+    width:90%;
+margin-bottom: 1em;
 }
 
 
@@ -257,15 +259,20 @@ width:1.7rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                input{max-width: 60%;
+                input{width: 60%;
                     height: 2em;
                     margin-top: 1em;
+                    
             
                 }
             }
             }
             
-        
+        #task-input{
+width:90%;
+margin-bottom: 1em;
+
+        }
         
         
         }
