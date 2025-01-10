@@ -106,8 +106,11 @@ else if(e.target.classList.contains('edit-button')){
 
 else if(e.target.classList.contains('done-button')){
 
-    
-    e.target.parentElement.parentElement.firstElementChild.classList.add('done-task')
+    if( !e.target.parentElement.parentElement.firstElementChild.classList.contains('done-task')){
+    e.target.parentElement.parentElement.firstElementChild.classList.add('done-task')}
+    else{
+        e.target.parentElement.parentElement.firstElementChild.classList.remove('done-task')
+    }
 
   
 
